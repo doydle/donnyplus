@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "web_accessible_resources": ["trump-1.jpg", "trump-2.jpg", "trump-3.jpg", "trump-4.jpg", "donaldcursor.png"],
+
+  "name": "DONNYPLUS",
+  "description": "vote 4 trump",
+  "version": "1.0",
+  
+  "browser_action": {
+	"default_icon": "icon.jpg",
+	"default_title": "ey how about dem mexicanss"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+	  "exclude_globs": ["https://www.donaldjtrump.com/*"],
+      "js": ["jquery.js", "content-script.js"],
+	  "run_at": "document_start"
+    }
+  ],
+
+  "permissions": 
+  [
+  "activeTab",
+  "https://ajax.googleapis.com/",
+  "notifications"
+  ]
+}
